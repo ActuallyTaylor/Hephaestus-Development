@@ -1,4 +1,0 @@
-"/Users/zacharylineman/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/222.4345.21/CLion.app/Contents/bin/cmake/mac/bin/cmake" -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" -S /Users/zacharylineman/Developer/GitHub/Hephaestus/Games/GameOfLife -B /Users/zacharylineman/Developer/GitHub/Hephaestus/Games/GameOfLife/build
--- Configuring done
--- Generating done
--- Build files have been written to: /Users/zacharylineman/Developer/GitHub/Hephaestus/Games/GameOfLife/build
