@@ -1,0 +1,427 @@
+## This file contains all the build statements describing the
+# compilation DAG.
+
+# =============================================================================
+# Write statements declared in CMakeLists.txt:
+# 
+# Which is the root file.
+# =============================================================================
+
+# =============================================================================
+# Project: Olympus
+# Configurations: Debug
+# =============================================================================
+
+#############################################
+# Minimal version of Ninja required by this file
+
+ninja_required_version = 1.5
+
+
+#############################################
+# Set configuration variable for custom commands.
+
+CONFIGURATION = Debug
+# =============================================================================
+# Include auxiliary files.
+
+
+#############################################
+# Include rules file.
+
+include CMakeFiles/rules.ninja
+
+# =============================================================================
+
+#############################################
+# Logical path to working directory; prefix for absolute paths.
+
+cmake_ninja_workdir = /Users/zacharylineman/Developer/GitHub/Hephaestus/Olympus/cmake-build-debug/
+# =============================================================================
+# Object build statements for EXECUTABLE target Olympus
+
+
+#############################################
+# Order-only phony target for Olympus
+
+build cmake_object_order_depends_target_Olympus: phony || cmake_object_order_depends_target_Hephaestus
+
+build CMakeFiles/Olympus.dir/main.cpp.o: CXX_COMPILER__Olympus_Debug /Users/zacharylineman/Developer/GitHub/Hephaestus/Olympus/main.cpp || cmake_object_order_depends_target_Olympus
+  DEP_FILE = CMakeFiles/Olympus.dir/main.cpp.o.d
+  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode-14.0.1.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -F/Library/Developer/CommandLineTools/SDKs/MacOSX12.sdk/System/Library/Frameworks  -std=gnu++17
+  INCLUDES = -I/Users/zacharylineman/Developer/GitHub/Hephaestus/Hephaestus/include -isystem /opt/homebrew/include -isystem /opt/homebrew/include/freetype2 -isystem /opt/homebrew/lib
+  OBJECT_DIR = CMakeFiles/Olympus.dir
+  OBJECT_FILE_DIR = CMakeFiles/Olympus.dir
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target Olympus
+
+
+#############################################
+# Link the executable Olympus
+
+build Olympus: CXX_EXECUTABLE_LINKER__Olympus_Debug CMakeFiles/Olympus.dir/main.cpp.o | Hephaestus/libHephaestusd.a /opt/homebrew/lib/libglfw.3.3.dylib /opt/homebrew/lib/libGLEW.2.2.0.dylib /opt/homebrew/lib/libfreetype.dylib || Hephaestus/libHephaestusd.a
+  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode-14.0.1.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk
+  LINK_LIBRARIES = -Wl,-rpath,/opt/homebrew/lib  Hephaestus/libHephaestusd.a  /opt/homebrew/lib/libglfw.3.3.dylib  /opt/homebrew/lib/libGLEW.2.2.0.dylib  -framework  OpenGL  /opt/homebrew/lib/libfreetype.dylib
+  LINK_PATH = -F/Library/Developer/CommandLineTools/SDKs/MacOSX12.sdk/System/Library/Frameworks
+  OBJECT_DIR = CMakeFiles/Olympus.dir
+  POST_BUILD = :
+  PRE_LINK = cd /Users/zacharylineman/Developer/GitHub/Hephaestus/Olympus/cmake-build-debug && "/Users/zacharylineman/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/222.4345.21/CLion.app/Contents/bin/cmake/mac/bin/cmake" -E copy_directory /Users/zacharylineman/Developer/GitHub/Hephaestus/Olympus/Resources /Users/zacharylineman/Developer/GitHub/Hephaestus/Olympus/cmake-build-debug && cd /Users/zacharylineman/Developer/GitHub/Hephaestus/Olympus/cmake-build-debug
+  TARGET_FILE = Olympus
+  TARGET_PDB = Olympus.dbg
+
+
+#############################################
+# Utility command for edit_cache
+
+build CMakeFiles/edit_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/zacharylineman/Developer/GitHub/Hephaestus/Olympus/cmake-build-debug && "/Users/zacharylineman/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/222.4345.21/CLion.app/Contents/bin/cmake/mac/bin/cmake" -E echo No\ interactive\ CMake\ dialog\ available.
+  DESC = No interactive CMake dialog available...
+  restat = 1
+
+build edit_cache: phony CMakeFiles/edit_cache.util
+
+
+#############################################
+# Utility command for rebuild_cache
+
+build CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/zacharylineman/Developer/GitHub/Hephaestus/Olympus/cmake-build-debug && "/Users/zacharylineman/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/222.4345.21/CLion.app/Contents/bin/cmake/mac/bin/cmake" --regenerate-during-build -S/Users/zacharylineman/Developer/GitHub/Hephaestus/Olympus -B/Users/zacharylineman/Developer/GitHub/Hephaestus/Olympus/cmake-build-debug
+  DESC = Running CMake to regenerate build system...
+  pool = console
+  restat = 1
+
+build rebuild_cache: phony CMakeFiles/rebuild_cache.util
+
+
+#############################################
+# Utility command for list_install_components
+
+build list_install_components: phony
+
+
+#############################################
+# Utility command for install
+
+build CMakeFiles/install.util: CUSTOM_COMMAND all
+  COMMAND = cd /Users/zacharylineman/Developer/GitHub/Hephaestus/Olympus/cmake-build-debug && "/Users/zacharylineman/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/222.4345.21/CLion.app/Contents/bin/cmake/mac/bin/cmake" -P cmake_install.cmake
+  DESC = Install the project...
+  pool = console
+  restat = 1
+
+build install: phony CMakeFiles/install.util
+
+
+#############################################
+# Utility command for install/local
+
+build CMakeFiles/install/local.util: CUSTOM_COMMAND all
+  COMMAND = cd /Users/zacharylineman/Developer/GitHub/Hephaestus/Olympus/cmake-build-debug && "/Users/zacharylineman/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/222.4345.21/CLion.app/Contents/bin/cmake/mac/bin/cmake" -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+  DESC = Installing only the local directory...
+  pool = console
+  restat = 1
+
+build install/local: phony CMakeFiles/install/local.util
+
+
+#############################################
+# Utility command for install/strip
+
+build CMakeFiles/install/strip.util: CUSTOM_COMMAND all
+  COMMAND = cd /Users/zacharylineman/Developer/GitHub/Hephaestus/Olympus/cmake-build-debug && "/Users/zacharylineman/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/222.4345.21/CLion.app/Contents/bin/cmake/mac/bin/cmake" -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+  DESC = Installing the project stripped...
+  pool = console
+  restat = 1
+
+build install/strip: phony CMakeFiles/install/strip.util
+
+# =============================================================================
+# Write statements declared in CMakeLists.txt:
+# /Users/zacharylineman/Developer/GitHub/Hephaestus/Olympus/CMakeLists.txt
+# =============================================================================
+
+# =============================================================================
+# Object build statements for STATIC_LIBRARY target Hephaestus
+
+
+#############################################
+# Order-only phony target for Hephaestus
+
+build cmake_object_order_depends_target_Hephaestus: phony || Hephaestus/CMakeFiles/Hephaestus.dir
+
+build Hephaestus/CMakeFiles/Hephaestus.dir/src/Hephaestus.cpp.o: CXX_COMPILER__Hephaestus_Debug /Users/zacharylineman/Developer/GitHub/Hephaestus/Hephaestus/src/Hephaestus.cpp || cmake_object_order_depends_target_Hephaestus
+  DEFINES = -D_EXPORT
+  DEP_FILE = Hephaestus/CMakeFiles/Hephaestus.dir/src/Hephaestus.cpp.o.d
+  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode-14.0.1.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -F/Library/Developer/CommandLineTools/SDKs/MacOSX12.sdk/System/Library/Frameworks  -std=gnu++17
+  INCLUDES = -I/Users/zacharylineman/Developer/GitHub/Hephaestus/Hephaestus/include -isystem /opt/homebrew/include -isystem /opt/homebrew/include/freetype2 -isystem /opt/homebrew/lib
+  OBJECT_DIR = Hephaestus/CMakeFiles/Hephaestus.dir
+  OBJECT_FILE_DIR = Hephaestus/CMakeFiles/Hephaestus.dir/src
+
+build Hephaestus/CMakeFiles/Hephaestus.dir/src/Shader/Shader.cpp.o: CXX_COMPILER__Hephaestus_Debug /Users/zacharylineman/Developer/GitHub/Hephaestus/Hephaestus/src/Shader/Shader.cpp || cmake_object_order_depends_target_Hephaestus
+  DEFINES = -D_EXPORT
+  DEP_FILE = Hephaestus/CMakeFiles/Hephaestus.dir/src/Shader/Shader.cpp.o.d
+  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode-14.0.1.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -F/Library/Developer/CommandLineTools/SDKs/MacOSX12.sdk/System/Library/Frameworks  -std=gnu++17
+  INCLUDES = -I/Users/zacharylineman/Developer/GitHub/Hephaestus/Hephaestus/include -isystem /opt/homebrew/include -isystem /opt/homebrew/include/freetype2 -isystem /opt/homebrew/lib
+  OBJECT_DIR = Hephaestus/CMakeFiles/Hephaestus.dir
+  OBJECT_FILE_DIR = Hephaestus/CMakeFiles/Hephaestus.dir/src/Shader
+
+build Hephaestus/CMakeFiles/Hephaestus.dir/src/Sprite/Sprite.cpp.o: CXX_COMPILER__Hephaestus_Debug /Users/zacharylineman/Developer/GitHub/Hephaestus/Hephaestus/src/Sprite/Sprite.cpp || cmake_object_order_depends_target_Hephaestus
+  DEFINES = -D_EXPORT
+  DEP_FILE = Hephaestus/CMakeFiles/Hephaestus.dir/src/Sprite/Sprite.cpp.o.d
+  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode-14.0.1.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -F/Library/Developer/CommandLineTools/SDKs/MacOSX12.sdk/System/Library/Frameworks  -std=gnu++17
+  INCLUDES = -I/Users/zacharylineman/Developer/GitHub/Hephaestus/Hephaestus/include -isystem /opt/homebrew/include -isystem /opt/homebrew/include/freetype2 -isystem /opt/homebrew/lib
+  OBJECT_DIR = Hephaestus/CMakeFiles/Hephaestus.dir
+  OBJECT_FILE_DIR = Hephaestus/CMakeFiles/Hephaestus.dir/src/Sprite
+
+build Hephaestus/CMakeFiles/Hephaestus.dir/src/Controls/ControlManager.cpp.o: CXX_COMPILER__Hephaestus_Debug /Users/zacharylineman/Developer/GitHub/Hephaestus/Hephaestus/src/Controls/ControlManager.cpp || cmake_object_order_depends_target_Hephaestus
+  DEFINES = -D_EXPORT
+  DEP_FILE = Hephaestus/CMakeFiles/Hephaestus.dir/src/Controls/ControlManager.cpp.o.d
+  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode-14.0.1.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -F/Library/Developer/CommandLineTools/SDKs/MacOSX12.sdk/System/Library/Frameworks  -std=gnu++17
+  INCLUDES = -I/Users/zacharylineman/Developer/GitHub/Hephaestus/Hephaestus/include -isystem /opt/homebrew/include -isystem /opt/homebrew/include/freetype2 -isystem /opt/homebrew/lib
+  OBJECT_DIR = Hephaestus/CMakeFiles/Hephaestus.dir
+  OBJECT_FILE_DIR = Hephaestus/CMakeFiles/Hephaestus.dir/src/Controls
+
+build Hephaestus/CMakeFiles/Hephaestus.dir/src/Controls/Keybind/Keybind.cpp.o: CXX_COMPILER__Hephaestus_Debug /Users/zacharylineman/Developer/GitHub/Hephaestus/Hephaestus/src/Controls/Keybind/Keybind.cpp || cmake_object_order_depends_target_Hephaestus
+  DEFINES = -D_EXPORT
+  DEP_FILE = Hephaestus/CMakeFiles/Hephaestus.dir/src/Controls/Keybind/Keybind.cpp.o.d
+  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode-14.0.1.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -F/Library/Developer/CommandLineTools/SDKs/MacOSX12.sdk/System/Library/Frameworks  -std=gnu++17
+  INCLUDES = -I/Users/zacharylineman/Developer/GitHub/Hephaestus/Hephaestus/include -isystem /opt/homebrew/include -isystem /opt/homebrew/include/freetype2 -isystem /opt/homebrew/lib
+  OBJECT_DIR = Hephaestus/CMakeFiles/Hephaestus.dir
+  OBJECT_FILE_DIR = Hephaestus/CMakeFiles/Hephaestus.dir/src/Controls/Keybind
+
+build Hephaestus/CMakeFiles/Hephaestus.dir/src/Camera/Camera.cpp.o: CXX_COMPILER__Hephaestus_Debug /Users/zacharylineman/Developer/GitHub/Hephaestus/Hephaestus/src/Camera/Camera.cpp || cmake_object_order_depends_target_Hephaestus
+  DEFINES = -D_EXPORT
+  DEP_FILE = Hephaestus/CMakeFiles/Hephaestus.dir/src/Camera/Camera.cpp.o.d
+  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode-14.0.1.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -F/Library/Developer/CommandLineTools/SDKs/MacOSX12.sdk/System/Library/Frameworks  -std=gnu++17
+  INCLUDES = -I/Users/zacharylineman/Developer/GitHub/Hephaestus/Hephaestus/include -isystem /opt/homebrew/include -isystem /opt/homebrew/include/freetype2 -isystem /opt/homebrew/lib
+  OBJECT_DIR = Hephaestus/CMakeFiles/Hephaestus.dir
+  OBJECT_FILE_DIR = Hephaestus/CMakeFiles/Hephaestus.dir/src/Camera
+
+build Hephaestus/CMakeFiles/Hephaestus.dir/src/Sprite/PhysicsSprite.cpp.o: CXX_COMPILER__Hephaestus_Debug /Users/zacharylineman/Developer/GitHub/Hephaestus/Hephaestus/src/Sprite/PhysicsSprite.cpp || cmake_object_order_depends_target_Hephaestus
+  DEFINES = -D_EXPORT
+  DEP_FILE = Hephaestus/CMakeFiles/Hephaestus.dir/src/Sprite/PhysicsSprite.cpp.o.d
+  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode-14.0.1.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -F/Library/Developer/CommandLineTools/SDKs/MacOSX12.sdk/System/Library/Frameworks  -std=gnu++17
+  INCLUDES = -I/Users/zacharylineman/Developer/GitHub/Hephaestus/Hephaestus/include -isystem /opt/homebrew/include -isystem /opt/homebrew/include/freetype2 -isystem /opt/homebrew/lib
+  OBJECT_DIR = Hephaestus/CMakeFiles/Hephaestus.dir
+  OBJECT_FILE_DIR = Hephaestus/CMakeFiles/Hephaestus.dir/src/Sprite
+
+build Hephaestus/CMakeFiles/Hephaestus.dir/src/Collision/PhysicsCollision.cpp.o: CXX_COMPILER__Hephaestus_Debug /Users/zacharylineman/Developer/GitHub/Hephaestus/Hephaestus/src/Collision/PhysicsCollision.cpp || cmake_object_order_depends_target_Hephaestus
+  DEFINES = -D_EXPORT
+  DEP_FILE = Hephaestus/CMakeFiles/Hephaestus.dir/src/Collision/PhysicsCollision.cpp.o.d
+  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode-14.0.1.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -F/Library/Developer/CommandLineTools/SDKs/MacOSX12.sdk/System/Library/Frameworks  -std=gnu++17
+  INCLUDES = -I/Users/zacharylineman/Developer/GitHub/Hephaestus/Hephaestus/include -isystem /opt/homebrew/include -isystem /opt/homebrew/include/freetype2 -isystem /opt/homebrew/lib
+  OBJECT_DIR = Hephaestus/CMakeFiles/Hephaestus.dir
+  OBJECT_FILE_DIR = Hephaestus/CMakeFiles/Hephaestus.dir/src/Collision
+
+build Hephaestus/CMakeFiles/Hephaestus.dir/src/Text/TextManager.cpp.o: CXX_COMPILER__Hephaestus_Debug /Users/zacharylineman/Developer/GitHub/Hephaestus/Hephaestus/src/Text/TextManager.cpp || cmake_object_order_depends_target_Hephaestus
+  DEFINES = -D_EXPORT
+  DEP_FILE = Hephaestus/CMakeFiles/Hephaestus.dir/src/Text/TextManager.cpp.o.d
+  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode-14.0.1.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -F/Library/Developer/CommandLineTools/SDKs/MacOSX12.sdk/System/Library/Frameworks  -std=gnu++17
+  INCLUDES = -I/Users/zacharylineman/Developer/GitHub/Hephaestus/Hephaestus/include -isystem /opt/homebrew/include -isystem /opt/homebrew/include/freetype2 -isystem /opt/homebrew/lib
+  OBJECT_DIR = Hephaestus/CMakeFiles/Hephaestus.dir
+  OBJECT_FILE_DIR = Hephaestus/CMakeFiles/Hephaestus.dir/src/Text
+
+build Hephaestus/CMakeFiles/Hephaestus.dir/src/Text/Text.cpp.o: CXX_COMPILER__Hephaestus_Debug /Users/zacharylineman/Developer/GitHub/Hephaestus/Hephaestus/src/Text/Text.cpp || cmake_object_order_depends_target_Hephaestus
+  DEFINES = -D_EXPORT
+  DEP_FILE = Hephaestus/CMakeFiles/Hephaestus.dir/src/Text/Text.cpp.o.d
+  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode-14.0.1.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -F/Library/Developer/CommandLineTools/SDKs/MacOSX12.sdk/System/Library/Frameworks  -std=gnu++17
+  INCLUDES = -I/Users/zacharylineman/Developer/GitHub/Hephaestus/Hephaestus/include -isystem /opt/homebrew/include -isystem /opt/homebrew/include/freetype2 -isystem /opt/homebrew/lib
+  OBJECT_DIR = Hephaestus/CMakeFiles/Hephaestus.dir
+  OBJECT_FILE_DIR = Hephaestus/CMakeFiles/Hephaestus.dir/src/Text
+
+build Hephaestus/CMakeFiles/Hephaestus.dir/src/UI/Button/Button.cpp.o: CXX_COMPILER__Hephaestus_Debug /Users/zacharylineman/Developer/GitHub/Hephaestus/Hephaestus/src/UI/Button/Button.cpp || cmake_object_order_depends_target_Hephaestus
+  DEFINES = -D_EXPORT
+  DEP_FILE = Hephaestus/CMakeFiles/Hephaestus.dir/src/UI/Button/Button.cpp.o.d
+  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode-14.0.1.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -F/Library/Developer/CommandLineTools/SDKs/MacOSX12.sdk/System/Library/Frameworks  -std=gnu++17
+  INCLUDES = -I/Users/zacharylineman/Developer/GitHub/Hephaestus/Hephaestus/include -isystem /opt/homebrew/include -isystem /opt/homebrew/include/freetype2 -isystem /opt/homebrew/lib
+  OBJECT_DIR = Hephaestus/CMakeFiles/Hephaestus.dir
+  OBJECT_FILE_DIR = Hephaestus/CMakeFiles/Hephaestus.dir/src/UI/Button
+
+build Hephaestus/CMakeFiles/Hephaestus.dir/src/UI/UIElement.cpp.o: CXX_COMPILER__Hephaestus_Debug /Users/zacharylineman/Developer/GitHub/Hephaestus/Hephaestus/src/UI/UIElement.cpp || cmake_object_order_depends_target_Hephaestus
+  DEFINES = -D_EXPORT
+  DEP_FILE = Hephaestus/CMakeFiles/Hephaestus.dir/src/UI/UIElement.cpp.o.d
+  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode-14.0.1.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -F/Library/Developer/CommandLineTools/SDKs/MacOSX12.sdk/System/Library/Frameworks  -std=gnu++17
+  INCLUDES = -I/Users/zacharylineman/Developer/GitHub/Hephaestus/Hephaestus/include -isystem /opt/homebrew/include -isystem /opt/homebrew/include/freetype2 -isystem /opt/homebrew/lib
+  OBJECT_DIR = Hephaestus/CMakeFiles/Hephaestus.dir
+  OBJECT_FILE_DIR = Hephaestus/CMakeFiles/Hephaestus.dir/src/UI
+
+build Hephaestus/CMakeFiles/Hephaestus.dir/src/Scene/Scene.cpp.o: CXX_COMPILER__Hephaestus_Debug /Users/zacharylineman/Developer/GitHub/Hephaestus/Hephaestus/src/Scene/Scene.cpp || cmake_object_order_depends_target_Hephaestus
+  DEFINES = -D_EXPORT
+  DEP_FILE = Hephaestus/CMakeFiles/Hephaestus.dir/src/Scene/Scene.cpp.o.d
+  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode-14.0.1.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -F/Library/Developer/CommandLineTools/SDKs/MacOSX12.sdk/System/Library/Frameworks  -std=gnu++17
+  INCLUDES = -I/Users/zacharylineman/Developer/GitHub/Hephaestus/Hephaestus/include -isystem /opt/homebrew/include -isystem /opt/homebrew/include/freetype2 -isystem /opt/homebrew/lib
+  OBJECT_DIR = Hephaestus/CMakeFiles/Hephaestus.dir
+  OBJECT_FILE_DIR = Hephaestus/CMakeFiles/Hephaestus.dir/src/Scene
+
+build Hephaestus/CMakeFiles/Hephaestus.dir/src/AudioEngine/AudioEngine.cpp.o: CXX_COMPILER__Hephaestus_Debug /Users/zacharylineman/Developer/GitHub/Hephaestus/Hephaestus/src/AudioEngine/AudioEngine.cpp || cmake_object_order_depends_target_Hephaestus
+  DEFINES = -D_EXPORT
+  DEP_FILE = Hephaestus/CMakeFiles/Hephaestus.dir/src/AudioEngine/AudioEngine.cpp.o.d
+  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode-14.0.1.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -F/Library/Developer/CommandLineTools/SDKs/MacOSX12.sdk/System/Library/Frameworks  -std=gnu++17
+  INCLUDES = -I/Users/zacharylineman/Developer/GitHub/Hephaestus/Hephaestus/include -isystem /opt/homebrew/include -isystem /opt/homebrew/include/freetype2 -isystem /opt/homebrew/lib
+  OBJECT_DIR = Hephaestus/CMakeFiles/Hephaestus.dir
+  OBJECT_FILE_DIR = Hephaestus/CMakeFiles/Hephaestus.dir/src/AudioEngine
+
+build Hephaestus/CMakeFiles/Hephaestus.dir/src/AudioEngine/AudioSnippet.cpp.o: CXX_COMPILER__Hephaestus_Debug /Users/zacharylineman/Developer/GitHub/Hephaestus/Hephaestus/src/AudioEngine/AudioSnippet.cpp || cmake_object_order_depends_target_Hephaestus
+  DEFINES = -D_EXPORT
+  DEP_FILE = Hephaestus/CMakeFiles/Hephaestus.dir/src/AudioEngine/AudioSnippet.cpp.o.d
+  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode-14.0.1.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -F/Library/Developer/CommandLineTools/SDKs/MacOSX12.sdk/System/Library/Frameworks  -std=gnu++17
+  INCLUDES = -I/Users/zacharylineman/Developer/GitHub/Hephaestus/Hephaestus/include -isystem /opt/homebrew/include -isystem /opt/homebrew/include/freetype2 -isystem /opt/homebrew/lib
+  OBJECT_DIR = Hephaestus/CMakeFiles/Hephaestus.dir
+  OBJECT_FILE_DIR = Hephaestus/CMakeFiles/Hephaestus.dir/src/AudioEngine
+
+build Hephaestus/CMakeFiles/Hephaestus.dir/src/UI/Image/Image.cpp.o: CXX_COMPILER__Hephaestus_Debug /Users/zacharylineman/Developer/GitHub/Hephaestus/Hephaestus/src/UI/Image/Image.cpp || cmake_object_order_depends_target_Hephaestus
+  DEFINES = -D_EXPORT
+  DEP_FILE = Hephaestus/CMakeFiles/Hephaestus.dir/src/UI/Image/Image.cpp.o.d
+  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode-14.0.1.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -F/Library/Developer/CommandLineTools/SDKs/MacOSX12.sdk/System/Library/Frameworks  -std=gnu++17
+  INCLUDES = -I/Users/zacharylineman/Developer/GitHub/Hephaestus/Hephaestus/include -isystem /opt/homebrew/include -isystem /opt/homebrew/include/freetype2 -isystem /opt/homebrew/lib
+  OBJECT_DIR = Hephaestus/CMakeFiles/Hephaestus.dir
+  OBJECT_FILE_DIR = Hephaestus/CMakeFiles/Hephaestus.dir/src/UI/Image
+
+build Hephaestus/CMakeFiles/Hephaestus.dir/src/Collision/CollisionArea.cpp.o: CXX_COMPILER__Hephaestus_Debug /Users/zacharylineman/Developer/GitHub/Hephaestus/Hephaestus/src/Collision/CollisionArea.cpp || cmake_object_order_depends_target_Hephaestus
+  DEFINES = -D_EXPORT
+  DEP_FILE = Hephaestus/CMakeFiles/Hephaestus.dir/src/Collision/CollisionArea.cpp.o.d
+  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode-14.0.1.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -F/Library/Developer/CommandLineTools/SDKs/MacOSX12.sdk/System/Library/Frameworks  -std=gnu++17
+  INCLUDES = -I/Users/zacharylineman/Developer/GitHub/Hephaestus/Hephaestus/include -isystem /opt/homebrew/include -isystem /opt/homebrew/include/freetype2 -isystem /opt/homebrew/lib
+  OBJECT_DIR = Hephaestus/CMakeFiles/Hephaestus.dir
+  OBJECT_FILE_DIR = Hephaestus/CMakeFiles/Hephaestus.dir/src/Collision
+
+
+# =============================================================================
+# Link build statements for STATIC_LIBRARY target Hephaestus
+
+
+#############################################
+# Link the static library Hephaestus/libHephaestusd.a
+
+build Hephaestus/libHephaestusd.a: CXX_STATIC_LIBRARY_LINKER__Hephaestus_Debug Hephaestus/CMakeFiles/Hephaestus.dir/src/Hephaestus.cpp.o Hephaestus/CMakeFiles/Hephaestus.dir/src/Shader/Shader.cpp.o Hephaestus/CMakeFiles/Hephaestus.dir/src/Sprite/Sprite.cpp.o Hephaestus/CMakeFiles/Hephaestus.dir/src/Controls/ControlManager.cpp.o Hephaestus/CMakeFiles/Hephaestus.dir/src/Controls/Keybind/Keybind.cpp.o Hephaestus/CMakeFiles/Hephaestus.dir/src/Camera/Camera.cpp.o Hephaestus/CMakeFiles/Hephaestus.dir/src/Sprite/PhysicsSprite.cpp.o Hephaestus/CMakeFiles/Hephaestus.dir/src/Collision/PhysicsCollision.cpp.o Hephaestus/CMakeFiles/Hephaestus.dir/src/Text/TextManager.cpp.o Hephaestus/CMakeFiles/Hephaestus.dir/src/Text/Text.cpp.o Hephaestus/CMakeFiles/Hephaestus.dir/src/UI/Button/Button.cpp.o Hephaestus/CMakeFiles/Hephaestus.dir/src/UI/UIElement.cpp.o Hephaestus/CMakeFiles/Hephaestus.dir/src/Scene/Scene.cpp.o Hephaestus/CMakeFiles/Hephaestus.dir/src/AudioEngine/AudioEngine.cpp.o Hephaestus/CMakeFiles/Hephaestus.dir/src/AudioEngine/AudioSnippet.cpp.o Hephaestus/CMakeFiles/Hephaestus.dir/src/UI/Image/Image.cpp.o Hephaestus/CMakeFiles/Hephaestus.dir/src/Collision/CollisionArea.cpp.o || /opt/homebrew/lib/libglfw.3.3.dylib /opt/homebrew/lib/libGLEW.2.2.0.dylib
+  ARCH_FLAGS = -arch arm64 -isysroot /Applications/Xcode-14.0.1.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk
+  LANGUAGE_COMPILE_FLAGS = -g
+  OBJECT_DIR = Hephaestus/CMakeFiles/Hephaestus.dir
+  POST_BUILD = :
+  PRE_LINK = cd /Users/zacharylineman/Developer/GitHub/Hephaestus/Olympus/cmake-build-debug/Hephaestus && "/Users/zacharylineman/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/222.4345.21/CLion.app/Contents/bin/cmake/mac/bin/cmake" -E copy_directory /Users/zacharylineman/Developer/GitHub/Hephaestus/Hephaestus/Resources/ /Users/zacharylineman/Developer/GitHub/Hephaestus/Olympus/cmake-build-debug/Hephaestus && cd /Users/zacharylineman/Developer/GitHub/Hephaestus/Olympus/cmake-build-debug
+  TARGET_FILE = Hephaestus/libHephaestusd.a
+  TARGET_PDB = Hephaestusd.a.dbg
+
+
+#############################################
+# Utility command for edit_cache
+
+build Hephaestus/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/zacharylineman/Developer/GitHub/Hephaestus/Olympus/cmake-build-debug/Hephaestus && "/Users/zacharylineman/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/222.4345.21/CLion.app/Contents/bin/cmake/mac/bin/cmake" -E echo No\ interactive\ CMake\ dialog\ available.
+  DESC = No interactive CMake dialog available...
+  restat = 1
+
+build Hephaestus/edit_cache: phony Hephaestus/CMakeFiles/edit_cache.util
+
+
+#############################################
+# Utility command for rebuild_cache
+
+build Hephaestus/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/zacharylineman/Developer/GitHub/Hephaestus/Olympus/cmake-build-debug/Hephaestus && "/Users/zacharylineman/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/222.4345.21/CLion.app/Contents/bin/cmake/mac/bin/cmake" --regenerate-during-build -S/Users/zacharylineman/Developer/GitHub/Hephaestus/Olympus -B/Users/zacharylineman/Developer/GitHub/Hephaestus/Olympus/cmake-build-debug
+  DESC = Running CMake to regenerate build system...
+  pool = console
+  restat = 1
+
+build Hephaestus/rebuild_cache: phony Hephaestus/CMakeFiles/rebuild_cache.util
+
+
+#############################################
+# Utility command for list_install_components
+
+build Hephaestus/list_install_components: phony
+
+
+#############################################
+# Utility command for install
+
+build Hephaestus/CMakeFiles/install.util: CUSTOM_COMMAND Hephaestus/all
+  COMMAND = cd /Users/zacharylineman/Developer/GitHub/Hephaestus/Olympus/cmake-build-debug/Hephaestus && "/Users/zacharylineman/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/222.4345.21/CLion.app/Contents/bin/cmake/mac/bin/cmake" -P cmake_install.cmake
+  DESC = Install the project...
+  pool = console
+  restat = 1
+
+build Hephaestus/install: phony Hephaestus/CMakeFiles/install.util
+
+
+#############################################
+# Utility command for install/local
+
+build Hephaestus/CMakeFiles/install/local.util: CUSTOM_COMMAND Hephaestus/all
+  COMMAND = cd /Users/zacharylineman/Developer/GitHub/Hephaestus/Olympus/cmake-build-debug/Hephaestus && "/Users/zacharylineman/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/222.4345.21/CLion.app/Contents/bin/cmake/mac/bin/cmake" -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+  DESC = Installing only the local directory...
+  pool = console
+  restat = 1
+
+build Hephaestus/install/local: phony Hephaestus/CMakeFiles/install/local.util
+
+
+#############################################
+# Utility command for install/strip
+
+build Hephaestus/CMakeFiles/install/strip.util: CUSTOM_COMMAND Hephaestus/all
+  COMMAND = cd /Users/zacharylineman/Developer/GitHub/Hephaestus/Olympus/cmake-build-debug/Hephaestus && "/Users/zacharylineman/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/222.4345.21/CLion.app/Contents/bin/cmake/mac/bin/cmake" -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+  DESC = Installing the project stripped...
+  pool = console
+  restat = 1
+
+build Hephaestus/install/strip: phony Hephaestus/CMakeFiles/install/strip.util
+
+# =============================================================================
+# Target aliases.
+
+build Hephaestus: phony Hephaestus/libHephaestusd.a
+
+build libHephaestusd.a: phony Hephaestus/libHephaestusd.a
+
+# =============================================================================
+# Folder targets.
+
+# =============================================================================
+
+#############################################
+# Folder: /Users/zacharylineman/Developer/GitHub/Hephaestus/Olympus/cmake-build-debug
+
+build all: phony Olympus Hephaestus/all
+
+# =============================================================================
+
+#############################################
+# Folder: /Users/zacharylineman/Developer/GitHub/Hephaestus/Olympus/cmake-build-debug/Hephaestus
+
+build Hephaestus/all: phony Hephaestus/libHephaestusd.a
+
+# =============================================================================
+# Built-in targets
+
+
+#############################################
+# Re-run CMake if any of its inputs changed.
+
+build build.ninja: RERUN_CMAKE | ../CMakeLists.txt /Users/zacharylineman/Developer/GitHub/Hephaestus/Hephaestus/CMakeLists.txt /Users/zacharylineman/Developer/GitHub/Hephaestus/Hephaestus/cmake/install_and_expose.cmake /Users/zacharylineman/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/222.4345.21/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/CMakeCInformation.cmake /Users/zacharylineman/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/222.4345.21/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/CMakeCXXInformation.cmake /Users/zacharylineman/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/222.4345.21/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/CMakeCommonLanguageInclude.cmake /Users/zacharylineman/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/222.4345.21/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/CMakeDependentOption.cmake /Users/zacharylineman/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/222.4345.21/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/CMakeGenericSystem.cmake /Users/zacharylineman/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/222.4345.21/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/CMakeInitializeConfigs.cmake /Users/zacharylineman/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/222.4345.21/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/CMakeLanguageInformation.cmake /Users/zacharylineman/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/222.4345.21/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/CMakeSystemSpecificInformation.cmake /Users/zacharylineman/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/222.4345.21/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/CMakeSystemSpecificInitialize.cmake /Users/zacharylineman/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/222.4345.21/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Compiler/AppleClang-C.cmake /Users/zacharylineman/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/222.4345.21/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Compiler/AppleClang-CXX.cmake /Users/zacharylineman/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/222.4345.21/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Compiler/CMakeCommonCompilerMacros.cmake /Users/zacharylineman/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/222.4345.21/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Compiler/Clang.cmake /Users/zacharylineman/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/222.4345.21/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Compiler/GNU.cmake /Users/zacharylineman/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/222.4345.21/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/FindFreetype.cmake /Users/zacharylineman/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/222.4345.21/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/FindGLEW.cmake /Users/zacharylineman/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/222.4345.21/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/FindPackageHandleStandardArgs.cmake /Users/zacharylineman/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/222.4345.21/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/FindPackageMessage.cmake /Users/zacharylineman/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/222.4345.21/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Platform/Apple-AppleClang-C.cmake /Users/zacharylineman/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/222.4345.21/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Platform/Apple-AppleClang-CXX.cmake /Users/zacharylineman/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/222.4345.21/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Platform/Apple-Clang-C.cmake /Users/zacharylineman/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/222.4345.21/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Platform/Apple-Clang-CXX.cmake /Users/zacharylineman/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/222.4345.21/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Platform/Apple-Clang.cmake /Users/zacharylineman/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/222.4345.21/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Platform/Darwin-Initialize.cmake /Users/zacharylineman/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/222.4345.21/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Platform/Darwin.cmake /Users/zacharylineman/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/222.4345.21/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Platform/UnixPaths.cmake /Users/zacharylineman/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/222.4345.21/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/SelectLibraryConfigurations.cmake /opt/homebrew/lib/cmake/glew/CopyImportedTargetProperties.cmake /opt/homebrew/lib/cmake/glew/glew-config.cmake /opt/homebrew/lib/cmake/glew/glew-targets-release.cmake /opt/homebrew/lib/cmake/glew/glew-targets.cmake /opt/homebrew/lib/cmake/glfw3/glfw3Config.cmake /opt/homebrew/lib/cmake/glfw3/glfw3ConfigVersion.cmake /opt/homebrew/lib/cmake/glfw3/glfw3Targets-release.cmake /opt/homebrew/lib/cmake/glfw3/glfw3Targets.cmake /opt/homebrew/lib/cmake/glm/glmConfig-version.cmake /opt/homebrew/lib/cmake/glm/glmConfig.cmake CMakeCache.txt CMakeFiles/3.23.2/CMakeCCompiler.cmake CMakeFiles/3.23.2/CMakeCXXCompiler.cmake CMakeFiles/3.23.2/CMakeSystem.cmake
+  pool = console
+
+
+#############################################
+# A missing CMake input file is not an error.
+
+build ../CMakeLists.txt /Users/zacharylineman/Developer/GitHub/Hephaestus/Hephaestus/CMakeLists.txt /Users/zacharylineman/Developer/GitHub/Hephaestus/Hephaestus/cmake/install_and_expose.cmake /Users/zacharylineman/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/222.4345.21/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/CMakeCInformation.cmake /Users/zacharylineman/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/222.4345.21/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/CMakeCXXInformation.cmake /Users/zacharylineman/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/222.4345.21/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/CMakeCommonLanguageInclude.cmake /Users/zacharylineman/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/222.4345.21/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/CMakeDependentOption.cmake /Users/zacharylineman/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/222.4345.21/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/CMakeGenericSystem.cmake /Users/zacharylineman/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/222.4345.21/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/CMakeInitializeConfigs.cmake /Users/zacharylineman/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/222.4345.21/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/CMakeLanguageInformation.cmake /Users/zacharylineman/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/222.4345.21/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/CMakeSystemSpecificInformation.cmake /Users/zacharylineman/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/222.4345.21/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/CMakeSystemSpecificInitialize.cmake /Users/zacharylineman/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/222.4345.21/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Compiler/AppleClang-C.cmake /Users/zacharylineman/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/222.4345.21/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Compiler/AppleClang-CXX.cmake /Users/zacharylineman/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/222.4345.21/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Compiler/CMakeCommonCompilerMacros.cmake /Users/zacharylineman/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/222.4345.21/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Compiler/Clang.cmake /Users/zacharylineman/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/222.4345.21/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Compiler/GNU.cmake /Users/zacharylineman/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/222.4345.21/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/FindFreetype.cmake /Users/zacharylineman/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/222.4345.21/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/FindGLEW.cmake /Users/zacharylineman/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/222.4345.21/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/FindPackageHandleStandardArgs.cmake /Users/zacharylineman/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/222.4345.21/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/FindPackageMessage.cmake /Users/zacharylineman/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/222.4345.21/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Platform/Apple-AppleClang-C.cmake /Users/zacharylineman/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/222.4345.21/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Platform/Apple-AppleClang-CXX.cmake /Users/zacharylineman/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/222.4345.21/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Platform/Apple-Clang-C.cmake /Users/zacharylineman/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/222.4345.21/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Platform/Apple-Clang-CXX.cmake /Users/zacharylineman/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/222.4345.21/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Platform/Apple-Clang.cmake /Users/zacharylineman/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/222.4345.21/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Platform/Darwin-Initialize.cmake /Users/zacharylineman/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/222.4345.21/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Platform/Darwin.cmake /Users/zacharylineman/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/222.4345.21/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Platform/UnixPaths.cmake /Users/zacharylineman/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/222.4345.21/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/SelectLibraryConfigurations.cmake /opt/homebrew/lib/cmake/glew/CopyImportedTargetProperties.cmake /opt/homebrew/lib/cmake/glew/glew-config.cmake /opt/homebrew/lib/cmake/glew/glew-targets-release.cmake /opt/homebrew/lib/cmake/glew/glew-targets.cmake /opt/homebrew/lib/cmake/glfw3/glfw3Config.cmake /opt/homebrew/lib/cmake/glfw3/glfw3ConfigVersion.cmake /opt/homebrew/lib/cmake/glfw3/glfw3Targets-release.cmake /opt/homebrew/lib/cmake/glfw3/glfw3Targets.cmake /opt/homebrew/lib/cmake/glm/glmConfig-version.cmake /opt/homebrew/lib/cmake/glm/glmConfig.cmake CMakeCache.txt CMakeFiles/3.23.2/CMakeCCompiler.cmake CMakeFiles/3.23.2/CMakeCXXCompiler.cmake CMakeFiles/3.23.2/CMakeSystem.cmake: phony
+
+
+#############################################
+# Clean all the built files.
+
+build clean: CLEAN
+
+
+#############################################
+# Print all primary targets available.
+
+build help: HELP
+
+
+#############################################
+# Make the all target the default.
+
+default all

@@ -1,0 +1,96 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"install",
+			"install_and_expose"
+		],
+		"files" : 
+		[
+			"/Users/zacharylineman/Developer/GitHub/Hephaestus/Hephaestus/cmake/install_and_expose.cmake",
+			"/Users/zacharylineman/Developer/GitHub/Hephaestus/Hephaestus/CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 1
+			},
+			{
+				"command" : 1,
+				"file" : 1,
+				"line" : 49,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 13,
+				"parent" : 1
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 20,
+				"parent" : 1
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 26,
+				"parent" : 1
+			}
+		]
+	},
+	"installers" : 
+	[
+		{
+			"backtrace" : 2,
+			"component" : "Unspecified",
+			"destination" : "lib",
+			"paths" : 
+			[
+				"Hephaestus/libHephaestusd.a"
+			],
+			"targetId" : "Hephaestus::@f8bc02338586082e7361",
+			"targetIndex" : 1,
+			"type" : "target"
+		},
+		{
+			"backtrace" : 3,
+			"component" : "Unspecified",
+			"destination" : "lib/cmake/Hephaestus",
+			"exportName" : "Hephaestus-config",
+			"exportTargets" : 
+			[
+				{
+					"id" : "Hephaestus::@f8bc02338586082e7361",
+					"index" : 1
+				}
+			],
+			"paths" : 
+			[
+				"Hephaestus/CMakeFiles/Export/lib/cmake/Hephaestus/Hephaestus-config.cmake"
+			],
+			"type" : "export"
+		},
+		{
+			"backtrace" : 4,
+			"component" : "Unspecified",
+			"destination" : "include/Hephaestus",
+			"paths" : 
+			[
+				{
+					"from" : "/Users/zacharylineman/Developer/GitHub/Hephaestus/Hephaestus/include",
+					"to" : "."
+				}
+			],
+			"type" : "directory"
+		}
+	],
+	"paths" : 
+	{
+		"build" : "Hephaestus",
+		"source" : "/Users/zacharylineman/Developer/GitHub/Hephaestus/Hephaestus"
+	}
+}
